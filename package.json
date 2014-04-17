@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "vn-labeled-radio",
   "subdomain": "volusion",
   "publishConfig": {
     "registry": "http://volusion.registry.nodejitsu.com/"
