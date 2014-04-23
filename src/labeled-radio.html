@@ -1,4 +1,10 @@
 ﻿<label class="labeled-radio">
-  <input class="labeled-radio__input" type="radio" data-ng-model="ngModel" name="{{name}}" value="{{value}}" data-ng-change="change()">
+  <input class="labeled-radio__input" type="radio"
+    name="{{name}}"
+    value="{{value}}"
+    data-ng-model="ngModel"
+    data-ng-value="ngValue"
+    data-ng-checked="ngChecked"
+    data-ng-change="change()">
   <span class="labeled-radio__label">{{label}}</span>
 </label>
