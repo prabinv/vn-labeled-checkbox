@@ -82,6 +82,15 @@ describe('Directive: vnLabeledRadio', function() {
     expect($radio).to.be.checked;
   });
 
+  it('passes "style" through to the label', function() {
+    var $component = compile({
+      extend: function($elem) {
+        return $elem.attr('style', 'color:#f00;');
+      }
+    });
+    expect($component).to.have.css('color', 'rgb(255, 0, 0)');
+  });
+
   it('responds to a change event', function() {
     var $scope = createScope({
       change: sinon.spy()

@@ -13,6 +13,7 @@ module.exports = [
         name: '@',
         value: '@',
         image: '@',
+        style: '@',
         ngValue: '=',
         ngChecked: '=',
         change: '&ngChange'
