@@ -32,6 +32,18 @@ describe('Directive: vnLabeledRadio', function() {
     expect($component.find('.labeled-radio__label')).to.have.text('foo');
   });
 
+  it('generates an image', function() {
+    var $component = compile();
+    expect($component.find('.labeled-radio__image')).to.not.exist;
+
+    $component = compile({
+      extend: function($elem) {
+        return $elem.attr('data-image', 'foo.jpg');
+      }
+    });
+    expect($component.find('.labeled-radio__image')).to.have.attr('src', 'foo.jpg');
+  });
+
   it('passes "name" through to the inner radio input', function() {
     var $component = compile({
       extend: function($elem) {
