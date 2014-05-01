@@ -24,44 +24,87 @@ describe('Directive: vnLabeledRadio', function() {
   });
 
   it('generates a label', function() {
-    var $component = compile('data-label="foo"');
+    var $component = compile({
+      extend: function($elem) {
+        return $elem.attr('data-label', 'foo');
+      }
+    });
     expect($component.find('.labeled-radio__label')).to.have.text('foo');
   });
 
+  it('generates an image', function() {
+    var $component = compile();
+    expect($component.find('.labeled-radio__image')).to.not.exist;
+
+    $component = compile({
+      extend: function($elem) {
+        return $elem.attr('data-image', 'foo.jpg');
+      }
+    });
+    expect($component.find('.labeled-radio__image')).to.have.attr('src', 'foo.jpg');
+  });
+
   it('passes "name" through to the inner radio input', function() {
-    var $component = compile('data-name="foo"');
+    var $component = compile({
+      extend: function($elem) {
+        return $elem.attr('data-name', 'foo');
+      }
+    });
     expect($component.find('.labeled-radio__input')).to.have.attr('name', 'foo');
   });
 
   it('passes "value" through to the inner radio input', function() {
-    var $component = compile('value="foo"');
+    var $component = compile({
+      extend: function($elem) {
+        return $elem.attr('value', 'foo');
+      }
+    });
     expect($component.find('.labeled-radio__input')).to.have.value('foo');
   });
 
   it('passes "ng-value" through to the inner radio input', function() {
-    var $component = compile('data-ng-value="foo"');
+    var $component = compile({
+      extend: function($elem) {
+        return $elem.attr('data-ng-value', 'foo');
+      }
+    });
     var $radio = $component.find('.labeled-radio__input');
     expect($radio).to.have.value('bar');
   });
 
   it('passes "ng-checked" through to the inner radio input', function() {
-    var $component = compile('data-ng-checked="isChecked"');
+    var $component = compile({
+      extend: function($elem) {
+        return $elem.attr('data-ng-checked', 'isChecked');
+      }
+    });
     var $radio = $component.find('.labeled-radio__input');
     expect($radio).to.be.checked;
   });
 
   it('responds to a change event', function() {
-    var $scope = $rootScope.$new();
-    $scope.change = sinon.spy();
-    var $component = compile('data-ng-change="change()"', $scope);
+    var $scope = createScope({
+      change: sinon.spy()
+    });
+    var $component = compile({
+      scope: $scope,
+      extend: function($elem) {
+        return $elem.attr('data-ng-change', 'change()');
+      }
+    });
     var radio = $component.find('.labeled-radio__input').get(0);
     radio.click();
     expect($scope.change).to.have.been.calledOnce;
   });
 
   it('binds to a model', function() {
-    var $scope = $rootScope.$new();
-    var $component = compile('value="foo"', $scope);
+    var $scope = createScope();
+    var $component = compile({
+      scope: $scope,
+      extend: function($elem) {
+        return $elem.attr('value', 'foo');
+      }
+    });
     var $radio = $component.find('.labeled-radio__input');
     expect($radio).not.to.be.checked;
     expect($scope.selectedValue.value).not.to.eq('foo');
@@ -70,20 +113,31 @@ describe('Directive: vnLabeledRadio', function() {
     expect($scope.selectedValue.value).to.eq('foo');
   });
 
-  function compile(attrs, $scope) {
-    $scope = $scope || $rootScope.$new();
-    var template = $compile(angular.element(
-      '<input data-vn-labeled-radio data-ng-model="selectedValue.value" ' + (attrs || '') + '>'));
+  function createScope(props) {
+    var $scope = $rootScope.$new();
+    return angular.extend($scope, props || {});
+  }
+
+  function compile(options) {
+    options = options || {};
+    var extend = options.extend || function(elem) { return elem; };
+    var $input = extend(angular.element('<input data-vn-labeled-radio/>')
+      .attr('data-ng-model', 'selectedValue.value'));
+    var template = $compile($input);
+    var $scope = options.scope || $rootScope.$new();
     var $component = template(addFixtureData($scope));
     $rootScope.$digest();
     return $component;
   }
 
   function addFixtureData($scope) {
-    $scope.foo = 'bar';
-    $scope.isChecked = true;
-    $scope.selectedValue = { value: null };
-    return $scope;
+    return angular.extend($scope, {
+      foo: 'bar',
+      isChecked: true,
+      selectedValue: {
+        value: null
+      }
+    });
   }
 
 });

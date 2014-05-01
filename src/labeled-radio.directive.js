@@ -12,6 +12,7 @@ module.exports = [
         label: '@',
         name: '@',
         value: '@',
+        image: '@',
         ngValue: '=',
         ngChecked: '=',
         change: '&ngChange'
