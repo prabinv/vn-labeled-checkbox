@@ -3,7 +3,9 @@
 
 var angular = require('angular');
 
-module.exports = angular.module('vn.labeledRadio', [])
+module.exports = angular.module('vn.labeledRadio', [
+    require('vn-bem').name
+  ])
   .run(function($templateCache) {
     $templateCache.put('labeled-radio.html', require('./labeled-radio.html'));
   })

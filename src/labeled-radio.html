@@ -1,11 +1,11 @@
-﻿<label class="labeled-radio" style="{{style}}">
-  <input class="labeled-radio__input" type="radio"
+﻿<label data-vn-block="vn-labeled-radio" style="{{style}}">
+  <input data-vn-element="input" type="radio"
     name="{{name}}"
     value="{{value}}"
     data-ng-model="ngModel"
     data-ng-value="ngValue"
     data-ng-checked="ngChecked"
     data-ng-change="change()">
-  <img class="labeled-radio__image" data-ng-if="image" src="{{image}}" alt="">
-  <span class="labeled-radio__label">{{label}}</span>
+  <img data-vn-element="image" data-ng-if="image" src="{{image}}" alt="">
+  <span data-vn-element="label">{{label}}</span>
 </label>
