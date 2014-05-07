@@ -131,7 +131,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: '*.html',
+          src: '**/*.html',
           dest: '.tmp'
         }]
       }
@@ -143,6 +143,12 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= yeoman.app %>',
         src: ['*.js'],
+        dest: '.tmp'
+      },
+      components: {
+        expand: true,
+        cwd: '<%= yeoman.app %>',
+        src: ['node_modules/**'],
         dest: '.tmp'
       }
     },
