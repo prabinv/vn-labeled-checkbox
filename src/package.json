@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "vn-bem": "0.0.2"
+    "vn-bem": "0.0.3"
   }
 }
