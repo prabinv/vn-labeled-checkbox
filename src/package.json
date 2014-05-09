@@ -2,6 +2,9 @@
   "name": "component",
   "version": "0.0.0",
   "private": true,
+  "browserify-shim": {
+    "angular": "global:angular"
+  },
   "dependencies": {
     "vn-bem": "0.0.3"
   }
