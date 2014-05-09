@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/volusion-angular/component",
   "devDependencies": {
-    "browserify": "^3.38.0",
+    "browserify": "^3.46.0",
     "browserify-shim": "^3.4.1",
     "chai-jquery": "^1.2.1",
     "grunt": "^0.4.4",
@@ -55,9 +55,6 @@
       "browserify-shim",
       "partialify"
     ]
-  },
-  "browser": {
-    "angular": "./angular.js"
   },
   "browserify-shim": {
     "angular": "global:angular"
