@@ -56,9 +56,6 @@
       "partialify"
     ]
   },
-  "browser": {
-    "angular": "./angular.js"
-  },
   "browserify-shim": {
     "angular": "global:angular"
   }
