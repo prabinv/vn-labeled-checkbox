@@ -4,7 +4,7 @@
   "publishConfig": {
     "registry": "http://volusion.registry.nodejitsu.com/"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Component for the AngularJS framework",
   "main": "src/index.js",
   "scripts": {
