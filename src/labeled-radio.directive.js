@@ -26,6 +26,11 @@ module.exports = [
         if (typeof value !== 'undefined' && typeof ngValue === 'undefined') {
           $radio.removeAttr('data-ng-value');
         }
+
+        var image = tAttrs.image;
+        if (typeof image !== 'undefined') {
+          tElement.removeAttr('data-image');
+        }
       }
     };
   }
