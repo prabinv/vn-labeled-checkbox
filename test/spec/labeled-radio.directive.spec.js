@@ -41,6 +41,7 @@ describe('Directive: vnLabeledRadio', function() {
         return $elem.attr('data-image', 'data:image/png;base64,foo');
       }
     });
+    expect($component).not.to.have.attr('data-image');
     expect($component.find('.vn-labeled-radio__image')).to.have.attr('src', 'data:image/png;base64,foo');
   });
 
@@ -111,15 +112,15 @@ describe('Directive: vnLabeledRadio', function() {
     var $component = compile({
       scope: $scope,
       extend: function($elem) {
-        return $elem.attr('value', 'foo');
+        return $elem.attr('data-ng-value', 'foo');
       }
     });
     var $radio = $component.find('.vn-labeled-radio__input');
     expect($radio).not.to.be.checked;
-    expect($scope.selectedValue.value).not.to.eq('foo');
+    expect($scope.selectedValue.value).not.to.eq('bar');
     $radio.get(0).click();
     expect($radio).to.be.checked;
-    expect($scope.selectedValue.value).to.eq('foo');
+    expect($scope.selectedValue.value).to.eq('bar');
   });
 
   function createScope(props) {
