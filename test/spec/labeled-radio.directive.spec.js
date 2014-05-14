@@ -20,29 +20,16 @@ describe('Directive: vnLabeledRadio', function() {
     var $component = compile();
     expect($component).to.have.class('vn-labeled-radio');
     expect($component).to.have('.vn-labeled-radio__input');
-    expect($component).to.have('.vn-labeled-radio__label');
+    expect($component).to.have('.vn-labeled-radio__content');
   });
 
-  it('generates a label', function() {
+  it('transcludes content', function() {
     var $component = compile({
       extend: function($elem) {
-        return $elem.attr('data-label', 'foo');
+        return $elem.append('foo');
       }
     });
-    expect($component.find('.vn-labeled-radio__label')).to.have.text('foo');
-  });
-
-  it('generates an image', function() {
-    var $component = compile();
-    expect($component.find('.vn-labeled-radio__image')).to.not.exist;
-
-    $component = compile({
-      extend: function($elem) {
-        return $elem.attr('data-image', 'data:image/png;base64,foo');
-      }
-    });
-    expect($component).not.to.have.attr('data-image');
-    expect($component.find('.vn-labeled-radio__image')).to.have.attr('src', 'data:image/png;base64,foo');
+    expect($component.find('.vn-labeled-radio__content')).to.have.text('foo');
   });
 
   it('passes "name" through to the inner radio input', function() {
@@ -81,15 +68,6 @@ describe('Directive: vnLabeledRadio', function() {
     });
     var $radio = $component.find('.vn-labeled-radio__input');
     expect($radio).to.be.checked;
-  });
-
-  it('passes "style" through to the label', function() {
-    var $component = compile({
-      extend: function($elem) {
-        return $elem.attr('style', 'color:#f00;');
-      }
-    });
-    expect($component).to.have.css('color', 'rgb(255, 0, 0)');
   });
 
   it('responds to a change event', function() {

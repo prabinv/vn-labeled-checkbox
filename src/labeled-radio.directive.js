@@ -6,14 +6,12 @@ module.exports = [
       require: 'ngModel',
       restrict: 'A',
       replace: true,
+      transclude: true,
       templateUrl: 'labeled-radio.html',
       scope: {
         ngModel: '=',
-        label: '@',
         name: '@',
         value: '@',
-        image: '@',
-        style: '@',
         ngValue: '=',
         ngChecked: '=',
         change: '&ngChange'
@@ -25,11 +23,6 @@ module.exports = [
         var ngValue = tAttrs.ngValue;
         if (typeof value !== 'undefined' && typeof ngValue === 'undefined') {
           $radio.removeAttr('data-ng-value');
-        }
-
-        var image = tAttrs.image;
-        if (typeof image !== 'undefined') {
-          tElement.removeAttr('data-image');
         }
       }
     };
