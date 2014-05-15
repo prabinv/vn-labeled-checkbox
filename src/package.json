@@ -6,6 +6,6 @@
     "angular": "global:angular"
   },
   "dependencies": {
-    "vn-bem": "0.0.3"
+    "vn-bem": "0.0.4"
   }
 }
