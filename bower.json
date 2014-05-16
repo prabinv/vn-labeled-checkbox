@@ -1,6 +1,14 @@
 {
   "name": "vn-labeled-radio",
   "version": "0.0.1",
+  "homepage": "https://github.com/volusion-angular/vn-labeled-radio.git",
+  "keywords": [
+    "angularjs",
+    "volusion",
+    "component",
+    "labeled",
+    "radio"
+  ],
   "ignore": [
     "**/.*",
     "Gruntfile.js",
