@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         }
       },
       js: {
-        files: ['<%= yeoman.app %>/*.js'],
+        files: ['index.js', '<%= yeoman.app %>/*.js'],
         tasks: ['newer:jshint:all', 'copy', 'browserify:test', 'karma'],
         options: {
           livereload: true
@@ -99,6 +99,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
+        'index.js',
         '<%= yeoman.app %>/*.js'
       ],
       test: {
@@ -130,7 +131,7 @@ module.exports = function (grunt) {
       views: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>',
+          cwd: '.tmp',
           src: '**/*.html',
           dest: '.tmp'
         }]
@@ -139,16 +140,10 @@ module.exports = function (grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
-      scripts: {
+      app: {
         expand: true,
-        cwd: '<%= yeoman.app %>',
-        src: ['*.js'],
-        dest: '.tmp'
-      },
-      components: {
-        expand: true,
-        cwd: '<%= yeoman.app %>',
-        src: ['node_modules/**'],
+        cwd: '',
+        src: ['index.js', '<%= yeoman.app %>/**'],
         dest: '.tmp'
       }
     },

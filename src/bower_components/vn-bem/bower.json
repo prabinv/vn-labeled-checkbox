@@ -1,5 +1,5 @@
 {
-  "name": "vn-labeled-radio",
+  "name": "vn-bem",
   "version": "0.0.1",
   "ignore": [
     "**/.*",
@@ -11,8 +11,5 @@
   "devDependencies": {
     "angular": "~1.2.16",
     "angular-mocks": "~1.2.16"
-  },
-  "dependencies": {
-    "vn-bem": "~0.0.1"
   }
 }

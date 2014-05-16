@@ -1,0 +1,25 @@
+{
+  "name": "vn-bem",
+  "ignore": [
+    "**/.*",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "node_modules",
+    "test"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.16",
+    "angular-mocks": "~1.2.16"
+  },
+  "homepage": "https://github.com/volusion-angular/component",
+  "_release": "3212fc6170",
+  "_resolution": {
+    "type": "branch",
+    "branch": "vn-bem",
+    "commit": "3212fc617098be1b9c010c36edb0954beb09ddee"
+  },
+  "_source": "https://github.com/volusion-angular/component.git",
+  "_target": "vn-bem",
+  "_originalSource": "https://github.com/volusion-angular/component.git",
+  "_direct": true
+}

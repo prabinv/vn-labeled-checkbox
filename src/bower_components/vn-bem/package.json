@@ -1,12 +1,9 @@
 {
   "name": "vn-bem",
-  "subdomain": "volusion",
-  "publishConfig": {
-    "registry": "http://volusion.registry.nodejitsu.com/"
-  },
-  "version": "0.0.4",
+  "version": "0.0.0",
   "description": "Component for the AngularJS framework",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
     "postinstall": "bower install",
     "test": "grunt test"
@@ -58,10 +55,5 @@
   },
   "browserify-shim": {
     "angular": "global:angular"
-  },
-  "readme": "component\r\n=========\r\n\r\nAngularJS components\r\n",
-  "readmeFilename": "README.md",
-  "_id": "vn-bem@0.0.4",
-  "_shasum": "9e92d30aea461ad83da9778a18877608cb3273bb",
-  "_from": "vn-bem@"
+  }
 }
