@@ -1,5 +1,7 @@
 {
   "name": "vn-bem",
+  "version": "0.0.1",
+  "homepage": "https://github.com/volusion-angular/vn-bem.git",
   "ignore": [
     "**/.*",
     "Gruntfile.js",
@@ -11,15 +13,14 @@
     "angular": "~1.2.16",
     "angular-mocks": "~1.2.16"
   },
-  "homepage": "https://github.com/volusion-angular/component",
-  "_release": "3212fc6170",
+  "_release": "0.0.1",
   "_resolution": {
-    "type": "branch",
-    "branch": "vn-bem",
-    "commit": "3212fc617098be1b9c010c36edb0954beb09ddee"
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "62d56e54a744a4b3a3caf113d89ef7a70192775a"
   },
-  "_source": "https://github.com/volusion-angular/component.git",
-  "_target": "vn-bem",
-  "_originalSource": "https://github.com/volusion-angular/component.git",
+  "_source": "git://github.com/volusion-angular/vn-bem.git",
+  "_target": "~0.0.1",
+  "_originalSource": "vn-bem",
   "_direct": true
 }

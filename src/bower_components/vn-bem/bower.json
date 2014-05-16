@@ -1,6 +1,7 @@
 {
   "name": "vn-bem",
   "version": "0.0.1",
+  "homepage": "https://github.com/volusion-angular/vn-bem.git",
   "ignore": [
     "**/.*",
     "Gruntfile.js",
