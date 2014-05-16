@@ -3,7 +3,7 @@
 // ReSharper disable WrongExpressionStatement
 describe('Controller: DemoCtrl', function() {
 
-  beforeEach(module('demo'));
+  beforeEach(module('vn-demo'));
 
   var controller;
   var scope;

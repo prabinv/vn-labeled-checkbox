@@ -1,12 +1,9 @@
 {
   "name": "demo",
-  "subdomain": "volusion",
-  "publishConfig": {
-    "registry": "http://volusion.registry.nodejitsu.com/"
-  },
   "version": "0.0.0",
   "description": "Component for the AngularJS framework",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
     "postinstall": "bower install",
     "test": "grunt test"
