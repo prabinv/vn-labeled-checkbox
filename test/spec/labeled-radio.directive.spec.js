@@ -33,41 +33,20 @@ describe('Directive: vnLabeledRadio', function() {
   });
 
   it('passes "name" through to the inner radio input', function() {
-    var $component = compile({
-      extend: function($elem) {
-        return $elem.attr('data-name', 'foo');
-      }
-    });
-    expect($component.find('.vn-labeled-radio__input')).to.have.attr('name', 'foo');
+    expect(createLabeledRadio({ 'data-name': 'foo' }).input).to.have.attr('name', 'foo');
   });
 
   it('passes "value" through to the inner radio input', function() {
-    var $component = compile({
-      extend: function($elem) {
-        return $elem.attr('value', 'foo');
-      }
-    });
-    expect($component.find('.vn-labeled-radio__input')).to.have.value('foo');
+    expect(createLabeledRadio({ value: 'foo' }).input).to.have.value('foo');
   });
 
   it('passes "ng-value" through to the inner radio input', function() {
-    var $component = compile({
-      extend: function($elem) {
-        return $elem.attr('data-ng-value', 'foo');
-      }
-    });
-    var $radio = $component.find('.vn-labeled-radio__input');
-    expect($radio).to.have.value('bar');
+    expect(createLabeledRadio({ 'data-ng-value': 'foo' }).input).to.have.value('bar');
   });
 
   it('passes "ng-checked" through to the inner radio input', function() {
-    var $component = compile({
-      extend: function($elem) {
-        return $elem.attr('data-ng-checked', 'isChecked');
-      }
-    });
-    var $radio = $component.find('.vn-labeled-radio__input');
-    expect($radio).to.be.checked;
+    expect(createLabeledRadio({ 'data-ng-checked': 'isTrue' }).input).to.be.checked;
+    expect(createLabeledRadio({ 'data-ng-checked': 'isFalse' }).input).not.to.be.checked;
   });
 
   it('responds to a change event', function() {
@@ -121,11 +100,23 @@ describe('Directive: vnLabeledRadio', function() {
   function addFixtureData($scope) {
     return angular.extend($scope, {
       foo: 'bar',
-      isChecked: true,
+      isTrue: true,
+      isFalse: false,
       selectedValue: {
         value: null
       }
     });
+  }
+
+  function createLabeledRadio(attrs) {
+    var $component = compile({
+      extend: function($elem) {
+        return $elem.attr(attrs);
+      }
+    });
+    return {
+      input: $component.find('.vn-labeled-radio__input')
+    };
   }
 
 });
