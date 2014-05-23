@@ -49,6 +49,11 @@ describe('Directive: vnLabeledRadio', function() {
     expect(createLabeledRadio({ 'data-ng-checked': 'isFalse' }).input).not.to.be.checked;
   });
 
+  it('passes "ng-disabled" through to the inner radio input', function() {
+    expect(createLabeledRadio({ 'data-ng-disabled': '{{isTrue}}' }).input).to.be.disabled;
+    expect(createLabeledRadio({ 'data-ng-disabled': '{{isFalse}}' }).input).not.to.be.disabled;
+  });
+
   it('responds to a change event', function() {
     var $scope = createScope({
       change: sinon.spy()
