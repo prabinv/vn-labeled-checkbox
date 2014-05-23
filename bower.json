@@ -1,5 +1,6 @@
 {
   "name": "vn-labeled-radio",
+  "description": "An AngularJS component that generates an input text box wrapped in a label.",
   "version": "0.0.1",
   "homepage": "https://github.com/volusion-angular/vn-labeled-radio.git",
   "keywords": [
