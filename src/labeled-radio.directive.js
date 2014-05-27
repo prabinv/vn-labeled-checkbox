@@ -14,6 +14,7 @@ module.exports = [
         value: '@',
         ngValue: '=',
         ngChecked: '=',
+        ngDisabled: '@',
         change: '&ngChange'
       },
       compile: function(tElement, tAttrs) {
