@@ -7,7 +7,7 @@ module.exports = [
       restrict: 'A',
       replace: true,
       transclude: true,
-      templateUrl: 'labeled-radio.html',
+      templateUrl: 'labeled-checkbox.html',
       scope: {
         ngModel: '=',
         name: '@',
@@ -18,12 +18,12 @@ module.exports = [
         change: '&ngChange'
       },
       compile: function(tElement, tAttrs) {
-        var $radio = tElement.find('input');
+        var $checkbox = tElement.find('input');
 
         var value = tAttrs.value;
         var ngValue = tAttrs.ngValue;
         if (typeof value !== 'undefined' && typeof ngValue === 'undefined') {
-          $radio.removeAttr('data-ng-value');
+          $checkbox.removeAttr('data-ng-value');
         }
       }
     };

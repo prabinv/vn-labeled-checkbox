@@ -1,5 +1,5 @@
 {
-  "name": "vn-labeled-radio",
+  "name": "vn-labeled-checkbox",
   "version": "0.0.0",
   "description": "Component for the AngularJS framework",
   "main": "src/index.js",

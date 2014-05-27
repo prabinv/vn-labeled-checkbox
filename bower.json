@@ -1,14 +1,14 @@
 {
-  "name": "vn-labeled-radio",
-  "description": "An AngularJS component that generates an input text box wrapped in a label.",
+  "name": "vn-labeled-checkbox",
+  "description": "An AngularJS component that generates an input checkbox wrapped in a label.",
   "version": "0.1.0",
-  "homepage": "https://github.com/volusion-angular/vn-labeled-radio.git",
+  "homepage": "https://github.com/volusion-angular/vn-labeled-checkbox.git",
   "keywords": [
     "angularjs",
     "volusion",
     "component",
     "labeled",
-    "radio"
+    "checkbox"
   ],
   "ignore": [
     "**/.*",

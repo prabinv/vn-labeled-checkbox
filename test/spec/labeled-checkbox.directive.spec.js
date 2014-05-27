@@ -1,10 +1,10 @@
 ﻿'use strict';
 
 // ReSharper disable WrongExpressionStatement
-describe('Directive: vnLabeledRadio', function() {
+describe('Directive: vnLabeledCheckbox', function() {
 
   // load the directive's module
-  beforeEach(module('vn.labeledRadio'));
+  beforeEach(module('vn.labeledCheckbox'));
 
   var $rootScope;
   var $compile;
@@ -16,11 +16,11 @@ describe('Directive: vnLabeledRadio', function() {
     $compile = _$compile_;
   }));
 
-  it('generates a vn-labeled-radio block', function() {
+  it('generates a vn-labeled-checkbox block', function() {
     var $component = compile();
-    expect($component).to.have.class('vn-labeled-radio');
-    expect($component).to.have('.vn-labeled-radio__input');
-    expect($component).to.have('.vn-labeled-radio__content');
+    expect($component).to.have.class('vn-labeled-checkbox');
+    expect($component).to.have('.vn-labeled-checkbox__input');
+    expect($component).to.have('.vn-labeled-checkbox__content');
   });
 
   it('transcludes content', function() {
@@ -29,29 +29,29 @@ describe('Directive: vnLabeledRadio', function() {
         return $elem.append('foo');
       }
     });
-    expect($component.find('.vn-labeled-radio__content')).to.have.text('foo');
+    expect($component.find('.vn-labeled-checkbox__content')).to.have.text('foo');
   });
 
-  it('passes "name" through to the inner radio input', function() {
-    expect(createLabeledRadio({ 'data-name': 'foo' }).input).to.have.attr('name', 'foo');
+  it('passes "name" through to the inner checkbox input', function() {
+    expect(createLabeledCheckbox({ 'data-name': 'foo' }).input).to.have.attr('name', 'foo');
   });
 
-  it('passes "value" through to the inner radio input', function() {
-    expect(createLabeledRadio({ value: 'foo' }).input).to.have.value('foo');
+  it('passes "value" through to the inner checkbox input', function() {
+    expect(createLabeledCheckbox({ value: 'foo' }).input).to.have.value('foo');
   });
 
-  it('passes "ng-value" through to the inner radio input', function() {
-    expect(createLabeledRadio({ 'data-ng-value': 'foo' }).input).to.have.value('bar');
+  it('passes "ng-value" through to the inner checkbox input', function() {
+    expect(createLabeledCheckbox({ 'data-ng-value': 'foo' }).input).to.have.value('bar');
   });
 
-  it('passes "ng-checked" through to the inner radio input', function() {
-    expect(createLabeledRadio({ 'data-ng-checked': 'isTrue' }).input).to.be.checked;
-    expect(createLabeledRadio({ 'data-ng-checked': 'isFalse' }).input).not.to.be.checked;
+  it('passes "ng-checked" through to the inner checkbox input', function() {
+    expect(createLabeledCheckbox({ 'data-ng-checked': 'isTrue' }).input).to.be.checked;
+    expect(createLabeledCheckbox({ 'data-ng-checked': 'isFalse' }).input).not.to.be.checked;
   });
 
-  it('passes "ng-disabled" through to the inner radio input', function() {
-    expect(createLabeledRadio({ 'data-ng-disabled': '{{isTrue}}' }).input).to.be.disabled;
-    expect(createLabeledRadio({ 'data-ng-disabled': '{{isFalse}}' }).input).not.to.be.disabled;
+  it('passes "ng-disabled" through to the inner checkbox input', function() {
+    expect(createLabeledCheckbox({ 'data-ng-disabled': '{{isTrue}}' }).input).to.be.disabled;
+    expect(createLabeledCheckbox({ 'data-ng-disabled': '{{isFalse}}' }).input).not.to.be.disabled;
   });
 
   it('responds to a change event', function() {
@@ -64,8 +64,8 @@ describe('Directive: vnLabeledRadio', function() {
         return $elem.attr('data-ng-change', 'change()');
       }
     });
-    var radio = $component.find('.vn-labeled-radio__input').get(0);
-    radio.click();
+    var checkbox = $component.find('.vn-labeled-checkbox__input').get(0);
+    checkbox.click();
     expect($scope.change).to.have.been.calledOnce;
   });
 
@@ -77,11 +77,11 @@ describe('Directive: vnLabeledRadio', function() {
         return $elem.attr('data-ng-value', 'foo');
       }
     });
-    var $radio = $component.find('.vn-labeled-radio__input');
-    expect($radio).not.to.be.checked;
+    var $checkbox = $component.find('.vn-labeled-checkbox__input');
+    expect($checkbox).not.to.be.checked;
     expect($scope.selectedValue.value).not.to.eq('bar');
-    $radio.get(0).click();
-    expect($radio).to.be.checked;
+    $checkbox.get(0).click();
+    expect($checkbox).to.be.checked;
     expect($scope.selectedValue.value).to.eq('bar');
   });
 
@@ -93,7 +93,7 @@ describe('Directive: vnLabeledRadio', function() {
   function compile(options) {
     options = options || {};
     var extend = options.extend || function(elem) { return elem; };
-    var $input = extend(angular.element('<input data-vn-labeled-radio/>')
+    var $input = extend(angular.element('<input data-vn-labeled-checkbox/>')
       .attr('data-ng-model', 'selectedValue.value'));
     var template = $compile($input);
     var $scope = options.scope || $rootScope.$new();
@@ -113,14 +113,14 @@ describe('Directive: vnLabeledRadio', function() {
     });
   }
 
-  function createLabeledRadio(attrs) {
+  function createLabeledCheckbox(attrs) {
     var $component = compile({
       extend: function($elem) {
         return $elem.attr(attrs);
       }
     });
     return {
-      input: $component.find('.vn-labeled-radio__input')
+      input: $component.find('.vn-labeled-checkbox__input')
     };
   }
 

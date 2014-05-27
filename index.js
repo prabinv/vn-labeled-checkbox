@@ -3,10 +3,10 @@
 
 var angular = require('angular');
 
-module.exports = angular.module('vn.labeledRadio', [
+module.exports = angular.module('vn.labeledCheckbox', [
     require('./src/bower_components/vn-bem').name
   ])
   .run(function($templateCache) {
-    $templateCache.put('labeled-radio.html', require('./src/labeled-radio.html'));
+    $templateCache.put('labeled-checkbox.html', require('./src/labeled-checkbox.html'));
   })
-  .directive('vnLabeledRadio', require('./src/labeled-radio.directive'));
+  .directive('vnLabeledCheckbox', require('./src/labeled-checkbox.directive'));

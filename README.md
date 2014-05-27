@@ -1,29 +1,29 @@
-vn-labeled-radio
+vn-labeled-checkbox
 ================
 
 > An [AngularJS][] component that generates an input text box wrapped in a label. All content is transcluded into a content span nested within the label.
 
-[![Build Status][]](https://travis-ci.org/volusion-angular/vn-labeled-radio)
-[![Dependency Status][]](https://gemnasium.com/volusion-angular/vn-labeled-radio)
-[![Views][]](https://sourcegraph.com/github.com/volusion-angular/vn-labeled-radio)
+[![Build Status][]](https://travis-ci.org/volusion-angular/vn-labeled-checkbox)
+[![Dependency Status][]](https://gemnasium.com/volusion-angular/vn-labeled-checkbox)
+[![Views][]](https://sourcegraph.com/github.com/volusion-angular/vn-labeled-checkbox)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 
 ## Template
 
-[labeled-radio.html](https://github.com/volusion-angular/vn-labeled-radio/blob/master/src/labeled-radio.html)
+[labeled-checkbox.html](https://github.com/volusion-angular/vn-labeled-checkbox/blob/master/src/labeled-checkbox.html)
 
 
 ## Generated BEM CSS Classes
 
-- label.vn-labeled-radio
-  - input.vn-labeled-radio__input
-  - span.vn-labeled-radio__content
+- label.vn-labeled-checkbox
+  - input.vn-labeled-checkbox__input
+  - span.vn-labeled-checkbox__content
 
 _Note: Please don't reference the HTML elements directly in your CSS. Instead, use the provided BEM classes to stay at CSS specificity of 1. For more information about BEM, refer to [MindBEMding &ndash; getting your head &rsquo;round BEM syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)._
 
 Transcluded elements that implement the `data-vn-element` directive will provide their own BEM classes automatically.
-For example, `data-vn-element="foo"` generates the BEM class `.vn-labeled-radio__foo`. For more information, please
+For example, `data-vn-element="foo"` generates the BEM class `.vn-labeled-checkbox__foo`. For more information, please
 refer to the [vn-bem directive's documentation](https://github.com/volusion-angular/vn-bem/blob/master/README.md).
 
 
@@ -45,7 +45,7 @@ The following [AngularJS directives](https://docs.angularjs.org/guide/directive)
 ## Basic Usage
 
 ```html
-<div data-vn-labeled-radio>Click me!</div>
+<div data-vn-labeled-checkbox>Click me!</div>
 ```
 
 _Note: Volusion urges you to use the `data-` attribute prefix for [HTML5 validation](http://html5.validator.nu/) purposes on all AngularJS directives._
@@ -54,7 +54,7 @@ _Note: Volusion urges you to use the `data-` attribute prefix for [HTML5 validat
 ## Complex Example
 
 ```html
-<div data-vn-labeled-radio
+<div data-vn-labeled-checkbox
   data-vn-modifiers="{{option.class}}"
   name="{{option.id}}"
   data-ng-value="item"
@@ -72,10 +72,10 @@ _Note: Volusion urges you to use the `data-` attribute prefix for [HTML5 validat
 
 No license. OSS License is TBD &copy; [Volusion, Inc.](http://www.volusion.com/)
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/volusion-angular/vn-labeled-radio/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/volusion-angular/vn-labeled-checkbox/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 
-[Build Status]: https://travis-ci.org/volusion-angular/vn-labeled-radio.png?branch=master
-[Dependency Status]: https://gemnasium.com/volusion-angular/vn-labeled-radio.png
-[Views]: https://sourcegraph.com/api/repos/github.com/volusion-angular/vn-labeled-radio/counters/views-24h.png
+[Build Status]: https://travis-ci.org/volusion-angular/vn-labeled-checkbox.png?branch=master
+[Dependency Status]: https://gemnasium.com/volusion-angular/vn-labeled-checkbox.png
+[Views]: https://sourcegraph.com/api/repos/github.com/volusion-angular/vn-labeled-checkbox/counters/views-24h.png
 [AngularJS]: http://angularjs.org/
