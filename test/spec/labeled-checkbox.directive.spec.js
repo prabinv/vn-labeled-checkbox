@@ -79,10 +79,10 @@ describe('Directive: vnLabeledCheckbox', function() {
     });
     var $checkbox = $component.find('.vn-labeled-checkbox__input');
     expect($checkbox).not.to.be.checked;
-    expect($scope.selectedValue.value).not.to.eq('bar');
+    expect($scope.selectedValue.value).not.to.be.true;
     $checkbox.get(0).click();
     expect($checkbox).to.be.checked;
-    expect($scope.selectedValue.value).to.eq('bar');
+    expect($scope.selectedValue.value).to.be.true;
   });
 
   function createScope(props) {
